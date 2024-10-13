@@ -30,7 +30,14 @@ find-replace.sh options (-cers) file-to-edit [files-to-edit]
 
 ### Default Source File
 
-By default, the script looks for sed commands in `~/.find-replace.sed`. You can change this by modifying the `DEFAULT_SRC` variable in the script.
+- By default, the script looks for sed commands in `~/.find-replace.sed`. 
+- You can change this by modifying the `DEFAULT_SRC` variable in the script.
+- Add as many [sed replacements](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/) as you need to this file, one per line
+   ```
+    cat ~/.find-replace.sed
+
+    s#region#area#
+   ```
 
 ## Examples
 
