@@ -1,6 +1,6 @@
 # find-replace
 
-`find-replace` is a versatile shell script for performing global find and replace operations using `sed`. It provides a user-friendly wrapper around `sed`, making it easier to manage and apply complex text transformations across multiple files.
+`find-replace` is a shell script for performing global find and replace operations using `sed`. It provides a user-friendly wrapper around `sed`, making it easier to manage and apply complex text transformations across multiple files.
 
 ## Origins
 
@@ -12,7 +12,7 @@ This script is based on an example from the book "Unix Power Tools", but has bee
 - Check changes before applying them
 - Edit the source file containing sed commands
 - Apply changes to multiple files at once
-- Colorized diff output for easy review
+- Diff output for easy review
 
 ## Usage
 
@@ -39,19 +39,23 @@ By default, the script looks for sed commands in `~/.find-replace.sed`. You can 
    find-replace.sh -e
    ```
 
-2. See colorized diffs of changes:
+2. See diffs of changes:
    ```
-   find-replace.sh -c file1.txt file2.txt
+   find-replace.sh -c my_script.py your_script.py
    ```
+
+   Here's an example of what the diff output looks like:
+
+   ![Diff Output](images/find-replace-example.png)
 
 3. Run the script on multiple files:
    ```
-   find-replace.sh -r *.txt
+   find-replace.sh -r *.py
    ```
 
 4. Use with `find` to process files recursively:
    ```
-   find . -name "*.php" | xargs find-replace.sh -c
+   find . -name "*.py" | xargs find-replace.sh -c
    ```
 
 ## Requirements
