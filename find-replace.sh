@@ -71,10 +71,15 @@ if [ -n "$CHECK" ]; then
     done
     exit
 fi
-# edit the source file?
+
 if [ -n "$EDIT" ]; then
-    $EDITOR $SCRIPT
-    exit
+    if [ -z "$EDITOR" ]; then
+        echo "Error: \$EDITOR environment variable is not set. Please set it to your preferred text editor."
+        exit 1
+    else
+        $EDITOR "$SCRIPT"
+        exit
+    fi
 fi
 # execute the script?
 if [ -n "$RUN" ]; then
